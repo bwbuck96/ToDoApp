@@ -8,8 +8,9 @@ export default function Profile() {
     return (
         <span className='profile p-2'>
         {/* Hello {currentUser.displayName.split(' ')[0]}! */}
-        Hello {currentUser.email}!
         <img src={currentUser.photoURL} alt={currentUser.displayName} />
+        {currentUser.displayName.split(' ')[0]}
+          
     </span>
   )
 }

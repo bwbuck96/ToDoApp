@@ -1,0 +1,77 @@
+/* Text Color - #f3d7bd */
+/* Text Color - On Hover - #f8b468 */
+/* Background Color - On Hover - #c2b57a */
+/* Background Color - #5a762c */
+
+section.todos{
+    background-image: url('../../images/background.jpg');
+    background-size: 100%;
+    min-height: 78vh;    
+    background-color: black;
+}
+section.todos article.dashboard {
+    background-color: #5a762c;
+    color: #f3d7bd;
+}
+
+section.todos article.todosGallery {
+    padding: 2em 0 4em;
+}
+
+/* style the tiles */
+article.toDoGallery div.singleToDo {
+    background-color: rgba(200, 200, 200, .95);
+    color: #5a762c;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+    border: 2px solid #212529;
+    position:relative;/* Edit and Delete buttons will be positioned absolute, so to create the boundaries for their absolute positioning, we make the outer container relative. */
+    padding: 0 0 2em;
+    height: 15em;
+}
+
+div.singleToDo h3 {
+    background-color: #5a762c;
+    padding: .5em 0;
+    border-bottom: 4px solid #212529;
+    color: #f3d7bd;
+}
+
+div.singleToDo p {
+    padding: 1em;
+}
+.singleToDo button {
+    position: absolute;
+    font-size: 1.2em;
+    top: .5em;
+    background: none;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: .25s;
+}
+.singleToDo button#editLink { 
+    left: .5em;
+}
+
+.singleToDo button#deleteLink {
+    right: .5em;
+}
+
+button#editLink:hover, button#deleteLink:hover {
+    background-color: rgb(200, 200, 200, .95);
+    color: #f3d7bd;
+    border-color: #f3d7bd;
+    ;
+} 
+
+
+@media screen and (max-width: 1023px) {
+
+    section.todos {
+        background-size: 200%;
+    }
+
+}
+

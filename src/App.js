@@ -19,7 +19,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path='/' element={<Welcome />} />
-          <Route path='/Login' element={<Login />} />
+          {/* <Route path='/Calendar' element={<Calendar />} /> TODO: If time permits, add a calendar page that shows ToDo's for that day*/ }
           <Route path='/ToDos' element={<ProtectedRoute><ToDos /></ProtectedRoute>} />
           <Route path='/Categories' element={<ProtectedRoute><Categories /></ProtectedRoute>} />
           <Route path='*' element={<NotFound />} />

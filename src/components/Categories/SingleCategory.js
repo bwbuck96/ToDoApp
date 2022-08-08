@@ -9,7 +9,7 @@ export default function SingleCategory(props) {
   const [showEdit, setShowEdit] = useState(false);
   const deleteCat = (id) => {
     if (window.confirm(`Are you sure you want to delete ${props.category.Name}?`))
-    axios.delete(`http://localhost:65057/api/Categories/${id}`).then(() => {props.getCategories()})
+    axios.delete(`http://api.buckthedev.com/api/Categories/${id}`).then(() => {props.getCategories()})
   }
   return (
     <tr>

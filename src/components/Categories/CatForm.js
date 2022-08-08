@@ -11,7 +11,7 @@ export default function CatForm(props) {
                 console.log('Create Mode')
                 const catToCreate = values;
 
-                axios.post(`http://localhost:65057/api/Categories`, catToCreate).then(() => {
+                axios.post(`http://api.buckthedev.com/api/Categories`, catToCreate).then(() => {
                     //After the successful Post, we get a 200 which sends us here
                     props.setShowCreate(false)//closes the form
                     props.getCategories()//sends a GET request to the API 
@@ -28,7 +28,7 @@ export default function CatForm(props) {
                     Description: values.Description
                 }
 
-                axios.put(`http://localhost:65057/api/Categories/${props.category.CategoryId}`, catToEdit).then(() => {
+                axios.put(`http://api.buckthedev.com/api/Categories/${props.category.CategoryId}`, catToEdit).then(() => {
                     props.getCategories();
                     props.setShowEdit(false);
                 })

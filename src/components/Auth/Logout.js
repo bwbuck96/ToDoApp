@@ -13,9 +13,9 @@ export default function Logout() {
         navigate ('/')
     }
     return (
-        <div className='logout text-center p-3 bg-dark text-white'>
+        <div className='text-center p-3 customFooter'>
         <Profile />
-        <button onClick={() => handleAuth()} className='btn btn-info'>Logout</button>
+        <button onClick={() => handleAuth()} className='customBtn'>Logout</button>
     </div>
   )
 }

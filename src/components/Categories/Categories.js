@@ -27,7 +27,7 @@ const {currentUser} = useAuth()
 const [categories, setCategories] = useState([]);
 const [showCreate, setShowCreate] = useState(false);
 const getCategories = () => {
-    axios.get(`http://localhost:65057/api/Categories`).then(response => {
+    axios.get(`http://api.buckthedev.com/api/Categories`).then(response => {
         console.log(response)
         setCategories(response.data)
     })

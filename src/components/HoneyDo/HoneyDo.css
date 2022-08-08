@@ -1,0 +1,10 @@
+/* Text Color - #f3d7bd */
+/* Text Color - On Hover - #f8b468 */
+/* Background Color - On Hover - #c2b57a */
+/* Background Color - #5a762c */
+
+
+section.welcome {
+    background-color: #5a762c;
+    color: #f3d7bd;
+}

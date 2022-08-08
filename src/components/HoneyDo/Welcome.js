@@ -1,31 +1,45 @@
 import React from 'react'
 import {useAuth} from '../../contexts/AuthContexts' 
-import { Link } from 'react-router-dom'
+import { Container, Card } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import {AiFillGithub} from 'react-icons/ai'
+import Profile from '../Auth/Profile'
+import './HoneyDo.css'
 
 export default function Welcome() {
+    
     const {currentUser} = useAuth()
+    const {login} = useAuth()
+    const navigate = useNavigate()
+
+    const handleLogin = async () => {
+        await login()
+        //call navigate function from react-router-dom to navigate to the component that will render as the home.
+        return navigate('/')
+    }
+    
   return (
-    <section>
+    <section className='welcome'>
         {currentUser !== null &&
-        <div>
-            <h2>Welcome {currentUser.Name}</h2>
-        </div>
+        navigate('/todos')
         }
         {currentUser === null && 
         <>
         <div>
             <h2>Welcome to HoneyDew!</h2>
         </div>
-        <div>
-            <p>Please use the button below to sign in</p>
-        </div>
-        <Link to='../../App.js'>
-        <button 
-            type='button'
-            className='btn btn-info'>
-                Sign In
-            </button>
-            </Link>
+        <Container >
+            <Card className='m-2 border-dark text-center'>
+                <Card.Header className='bg-dark text-white'>
+                    <h2>Please sign in for full functionality</h2>
+                </Card.Header>
+                <Card.Body>
+                    <button className='btn btn-success m-1 col-md-1' onClick={() => handleLogin()}><AiFillGithub /></button>
+                    {/* <button className='btn btn-success m-1 col-md-1' onClick={() => handleLogin()}><AiFillGithub /></button>
+                    <button className='btn btn-success m-1 col-md-1' onClick={() => handleLogin()}><AiFillGithub /></button> Alternative Login Options? */}
+                </Card.Body>
+            </Card>
+    </Container>
             </>
         }
     </section>
